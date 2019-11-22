@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: grpc-client
+  main:
+    banner-mode: log
+grpc:
+  client:
+    grpc-server:
+      address: static://172.19.64.68:9898
+      negotiationType: PLAINTEXT
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+server:
+  port: 10060

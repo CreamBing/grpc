@@ -1,0 +1,36 @@
+<assembly>
+	<id>assembly-${env.devMode}</id>
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<files>
+		<file>
+			<source>target/${project.artifactId}-${project.version}.jar</source>
+			<outputDirectory>./</outputDirectory>
+			<destName>${project.artifactId}-${project.version}.jar</destName>
+		</file>
+	</files>
+	<fileSets>
+		<fileSet>
+			<directory>src/main/assembly/${env.devMode}/version</directory>
+			<outputDirectory>./version</outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/assembly/${env.devMode}/config</directory>
+			<outputDirectory>config</outputDirectory>
+			<fileMode>0644</fileMode>
+		</fileSet>
+		<fileSet>
+			<directory>src/main/assembly/${env.devMode}/bin</directory>
+			<outputDirectory>bin</outputDirectory>
+			<fileMode>0755</fileMode>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<fileMode>666</fileMode>
+		</dependencySet>
+	</dependencySets>
+</assembly>

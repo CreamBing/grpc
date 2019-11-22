@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: grpc-server
+  main:
+    banner-mode: log
+grpc:
+  server:
+    port: 9898
+    address: 172.19.64.68
+    security:
+      enabled: false

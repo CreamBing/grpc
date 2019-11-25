@@ -1,0 +1,11 @@
+syntax = "proto3";
+import "greeter.proto";
+option java_package = "top.creambing.grpc.proto";
+
+// The greeter service definition.
+service SCStreamGreeter {
+    // Sends a greeting
+    rpc SayHello (stream HelloRequest ) returns (stream HelloReply) {}
+}
+
+

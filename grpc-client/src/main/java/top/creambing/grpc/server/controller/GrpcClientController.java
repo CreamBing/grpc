@@ -20,4 +20,19 @@ public class GrpcClientController {
         return grpcClientService.sendMessage(name);
     }
 
+    @RequestMapping("/clientStream")
+    public String clientStream(@RequestParam(defaultValue = "Michael,Bob,Alice") String name) {
+        return grpcClientService.clientStream(name);
+    }
+
+    @RequestMapping("/serverStream")
+    public String serverStream(@RequestParam(defaultValue = "Michael,Bob,Alice") String name) {
+        return grpcClientService.serverStream(name);
+    }
+
+    @RequestMapping("/scStream")
+    public String scStream(@RequestParam(defaultValue = "Michael,Bob,Alice") String name) {
+        return grpcClientService.scStream(name);
+    }
+
 }
